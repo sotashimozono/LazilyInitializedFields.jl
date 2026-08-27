@@ -210,7 +210,6 @@ end
 
 Function version of [`@uninit!`](@ref).
 """
-
 @inline function uninit!(x::T, s::Symbol) where {T}
     islazyfield(T, s) || throw(NonLazyFieldException(T, s))
     return setfield!(x, s, uninit)
